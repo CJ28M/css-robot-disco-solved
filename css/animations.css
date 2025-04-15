@@ -1,0 +1,106 @@
+@keyframes cloud {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes left-eye-move {
+  0% {
+    bottom: 105px;
+    left: 130px;
+    background-color: black;
+  }
+
+  25% {
+    bottom: 85px;
+    left: 130px;
+  }
+
+  50% {
+    bottom: 85px;
+    left: 100px;
+    background-color: red;
+  }
+
+  75% {
+    bottom: 105px;
+    left: 100px;
+  }
+
+  100% {
+    bottom: 105px;
+    left: 130px;
+    background-color: blue;
+  }
+}
+
+@keyframes right-eye-move {
+  0% {
+    bottom: 200px;
+    left: 215px;
+    background-color: black;
+  }
+
+  25% {
+    bottom: 180px;
+    left: 215px;
+  }
+
+  50% {
+    bottom: 180px;
+    left: 190px;
+    background-color: red;
+  }
+
+  75% {
+    bottom: 200px;
+    left: 190px;
+  }
+
+  100% {
+    bottom: 200px;
+    left: 215px;
+    background-color: blue;
+  }
+}
+
+@keyframes talking-teeth-e {
+  0% {
+    background-color: beige;
+  }
+
+  50% {
+    background-color: gold;
+  }
+
+  100% {
+    background-color: beige;
+  }
+}
+
+@keyframes talking-teeth-o {
+  0% {
+    background-color: gold;
+  }
+
+  50% {
+    background-color: beige;
+  }
+
+  100% {
+    background-color: gold;
+  }
+}
+
+.robot-nose:hover {
+  display: none;
+}
+
+.robot-ear-left:hover,
+.robot-ear-right:hover {
+  transform: rotate(-33deg);
+}

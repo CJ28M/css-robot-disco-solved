@@ -1,41 +1,421 @@
-body {
-  background-color: #21222c;
+.robot {
+  align-content: auto;
+  padding: 100px;
+  margin: auto;
 }
 
-/* 👇👇👇 Paste the styles of your Fancy Robot from the "Position it right" assignment here 👇👇👇 */
-
 .robot-container {
+  height: 350px;
+  width: 220px;
+  margin: 200px;
+  position: relative;
+  border: 2px solid black;
+  background: rgb(181, 203, 223);
+  border-radius: 110px 110px 23px 20px / 110px 110px 0px 0px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.robot-gap {
+  height: 55px;
+  width: 30px;
+  left: 170px;
+  bottom: 2.5px;
+  position: relative;
+  background: #21222c;
+  z-index: 2;
+}
+
+.robot-jaw {
+  height: 60px;
+  width: 22px;
+  bottom: 2.5px;
+  left: 175px;
+  position: relative;
+  background: #21222c;
+  z-index: 2;
 }
 
 .robot-face-shape {
+  width: 280px;
+  height: 110px;
+  left: 15px;
+  position: relative;
+  top: 100px;
+  background: rgb(181, 203, 223);
+  border: 2px solid black;
+  border-radius: 50px 70px 70px 30px / 53px 70px 70px 82px;
+  z-index: 3;
+}
+
+.robot-eye-iframe {
+  width: 240px;
+  height: 90px;
+  position: relative;
+  top: -60px;
+  left: 45px;
+  background: black;
+  border: 2px solid black;
+  border-radius: 60px 70px 70px 39px / 62px 70px 70px 79px;
+  z-index: 3;
+}
+
+.left-eye-ball {
+  width: 100px;
+  height: 60px;
+  top: 30px;
+  left: 45px;
+  position: relative;
+  background: beige;
+  border: 2px solid black;
+  border-radius: 191px 202px 117px 102px / 85px 90px 117px 119px;
+  z-index: 4;
 }
 
 .robot-eye-left {
+  width: 10px;
+  height: 10px;
+  bottom: 115px;
+  left: 115px;
+  position: relative;
+  background: black;
+  z-index: 4;
+  animation: left-eye-move 5s infinite linear;
+}
+
+.right-eye-ball {
+  position: relative;
+  width: 100px;
+  height: 70px;
+  left: 130px;
+  bottom: 142px;
+  background: beige;
+  border-radius: 150px 145px 140px 140px / 200px 119px 140px 140px;
+  z-index: 3;
 }
 
 .robot-eye-right {
-}
-
-.robot-ear-left {
+  width: 10px;
+  height: 10px;
+  bottom: 200px;
+  left: 215px;
+  position: relative;
+  background: black;
+  z-index: 4;
+  animation: right-eye-move 5s infinite linear;
 }
 
 .robot-ear-right {
+  height: 10%;
+  width: 10%;
+  bottom: 500px;
+  position: relative;
+  left: 370px;
+  aspect-ratio: 0.56;
+  clip-path: polygon(
+    100% 0,
+    23% 46%,
+    46% 44%,
+    15% 69%,
+    38% 67%,
+    0 100%,
+    76% 57%,
+    53% 58%,
+    88% 33%,
+    60% 37%
+  );
+  border: 2px solid black;
+  background: #ff8001;
+  z-index: 0;
+  transition: transform 0.3s ease;
 }
 
-.robot-nose {
-}
-
-.robot-nose:before {
-}
-
-.robot-nose:after {
+.robot-ear-left {
+  height: 100px;
+  width: 100px;
+  bottom: 380px;
+  position: relative;
+  left: 120px;
+  aspect-ratio: 0.56;
+  clip-path: polygon(
+    100% 0,
+    23% 46%,
+    46% 44%,
+    15% 69%,
+    38% 67%,
+    0 100%,
+    76% 57%,
+    53% 58%,
+    88% 33%,
+    60% 37%
+  );
+  border: 2px solid black;
+  background: #ff8001;
+  z-index: 2;
+  transition: transform 0.3s ease;
 }
 
 .robot-teeth {
+  height: 75px;
+  width: 175px;
+  position: relative;
+  bottom: 100px;
+  left: 20px;
+  border: 2px solid black;
+  border-radius: 45px 53px 95px 45px / 45px 0px 27px 45px;
+  background: beige;
+  z-index: 2;
+  animation-name: talking-teeth-e;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-.robot-tooth {
+.robot-tooth1 {
+  width: 45px;
+  height: 35px;
+  position: absolute;
+  bottom: 38px;
+  left: -1px;
+  background: beige;
+  border: 2px solid black;
+  border-radius: 65px 1px 23px 0px / 65px 75px 0px 0px;
+  z-index: 3;
+  animation-name: talking-teeth-e;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-.robot-hair-style {
+.robot-tooth2 {
+  width: 45px;
+  height: 35px;
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  background: beige;
+  border: 2px solid black;
+  border-radius: 0px 1px 23px 160px / 20px 75px 0px 140px;
+  z-index: 3;
+  animation-name: talking-teeth-e;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.robot-tooth3 {
+  width: 45px;
+  height: 35px;
+  position: absolute;
+  bottom: 38px;
+  left: 42px;
+  border: 2px solid black;
+  background: beige;
+  border-radius: 0px 0px 70px 0px / 0px 0px 20px 0px;
+  z-index: 3;
+  animation-name: talking-teeth-o;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.robot-tooth4 {
+  width: 45px;
+  height: 35px;
+  left: 41px;
+  top: 38px;
+  position: absolute;
+  border: 2px solid black;
+  background: beige;
+  border-radius: 0px 70px 0px 0px / 0px 20px 0px 0px;
+  z-index: 3;
+  animation-name: talking-teeth-o;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.robot-tooth5 {
+  width: 45px;
+  height: 27px;
+  position: absolute;
+  bottom: 46px;
+  left: 82px;
+  border: 2px solid black;
+  background: beige;
+  z-index: 3;
+  animation-name: talking-teeth-e;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.robot-tooth6 {
+  width: 45px;
+  height: 27px;
+  position: absolute;
+  bottom: -1px;
+  left: 82px;
+  border: 2px solid black;
+  background: beige;
+  z-index: 3;
+  animation-name: talking-teeth-e;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.robot-tooth7 {
+  width: 47.5px;
+  height: 35px;
+  position: absolute;
+  bottom: -1px;
+  left: 125px;
+  border: 2px solid black;
+  background: beige;
+  border-radius: 70px 0px 76px 0px / 20px 0px 20px 0px;
+  z-index: 2;
+  animation-name: talking-teeth-o;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.robot-tooth8 {
+  width: 47px;
+  height: 36px;
+  position: absolute;
+  bottom: 37px;
+  left: 125px;
+  border: 2px solid black;
+  background: beige;
+  border-radius: 0px 0px 0px 70px / 0px 0px 0px 20px;
+  z-index: 2;
+  animation-name: talking-teeth-o;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.robot-tooth9 {
+  width: 45px;
+  height: 10px;
+  bottom: 30px;
+  left: -1.65px;
+  border: 2px solid black;
+  background: beige;
+  position: absolute;
+  z-index: 2;
+  animation-name: talking-teeth-o;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.robot-tooth10 {
+  width: 43px;
+  height: 40px;
+  bottom: 10px;
+  left: 41px;
+  border: 2px solid black;
+  background: beige;
+  position: absolute;
+  z-index: 2;
+  animation-name: talking-teeth-e;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.robot-tooth11 {
+  width: 45px;
+  height: 28px;
+  bottom: 20px;
+  left: 82px;
+  border: 2px solid black;
+  background: beige;
+  position: absolute;
+  z-index: 2;
+  animation-name: talking-teeth-o;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.robot-nose {
+  position: relative;
+  width: 80px;
+  bottom: 240px;
+  left: 110px;
+  aspect-ratio: 1;
+  border: 2px solid black;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 30%, #0000 4%, 57%, #000 90%)
+    #fe4365;
+  z-index: 4;
+  transition: transform 1s ease;
+}
+
+.robot-hair-one {
+  height: 150px;
+  width: 300px;
+  position: relative;
+  bottom: 900px;
+  left: 150px;
+  border: 2px solid black;
+  --g: radial-gradient(50% 50%, #000 98%, #0000) no-repeat;
+  mask: var(--g) 100% 100%/30% 60%, var(--g) 70% 0/50% 100%,
+    var(--g) 0 100%/36% 68%, var(--g) 27% 18%/26% 40%,
+    linear-gradient(#000 0 0) bottom/67% 58% no-repeat;
+  background: #269af2;
+  z-index: 2;
+  animation-name: cloud;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Stem */
+
+.robot-hair-two {
+  width: 20px;
+  height: 100px;
+  position: relative;
+  bottom: 1100px;
+  left: 280px;
+  border: 2px solid black;
+  background: rgb(181, 203, 223);
+  z-index: 1;
+}
+
+/* ball */
+.robot-hair-three {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  background: url(https://media.wired.com/photos/64bae8cb4a854832b16fd337/16:9/w_40,h_40,c_limit/The-New-Futurama-Successfully-Reboots-the-Show-for-2023-Culture.jpg);
+  bottom: 1210px;
+  left: 270px;
+  border: 2px solid black;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.banner {
+  margin: auto;
+  width: 200px;
+  height: 50px;
+  position: static;
+  color: black;
+  background: url(https://media.wired.com/photos/64bae8cb4a854832b16fd337/16:9/w_200,h_50,c_limit/The-New-Futurama-Successfully-Reboots-the-Show-for-2023-Culture.jpg);
+  border: 2px solid black;
+}
+
+.clown {
+  text-align: center;
+  font-style: italic;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  text-decoration: solid;
 }
